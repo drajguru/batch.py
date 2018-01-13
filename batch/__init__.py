@@ -3,7 +3,7 @@ from recordtype import recordtype
 
 from ply import lex
 
-from src.objects import Scope, Command, Param, FileIf, StringIf, ErrorIf, Else
+from batch.objects import Scope, Command, Param, FileIf, StringIf, ErrorIf, Else
 
 
 IfState = recordtype("IfState", "else_clause inverted test statement type i operand1 operand2 operator")
@@ -179,7 +179,7 @@ def t_stringif_operand(t):
 
 
 def t_INITIAL_parens_silent_if_endif_else_command(t):
-    r"""[a-z1-9_\-]+"""
+    r"""\"(.+)\"|[a-z1-9_\-]+"""
     t.lexer.command = t.value
     t.lexer.params = []
     t.lexer.push_state("command")

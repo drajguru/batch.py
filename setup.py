@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name='batch.py',
+    name='batch',
     version='0.1',
-    packages=['src'],
+    py_modules=["batch"],
     url='https://github.com/moomoohk/batch.py',
     license='MIT',
     author='Meshulam Silk',
